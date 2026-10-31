@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #0b0c0e;
+  overflow-x: hidden;
+}
+
+/* Minimal sleek scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0c0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Thin 2px loading line at top of viewport */
+.loader-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  z-index: 1000;
+  pointer-events: none;
+  transition: width 0.15s ease-out, opacity 0.6s ease-in-out;
+}
+
+.loader-bar.loaded {
+  opacity: 0;
+}
+
+/* Fixed fullscreen rendering canvas */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 1;
+  pointer-events: none;
+  background-color: #0b0c0e;
+}
+
+/* Scroll track providing 600vh distance for smooth scrubbing */
+#scroll-track {
+  width: 100%;
+  height: 600vh;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
