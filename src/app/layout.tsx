@@ -40,6 +40,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,6 +53,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-slate-mist selection:text-charcoal-900 bg-ivory text-charcoal min-h-screen flex flex-col`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
